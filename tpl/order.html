@@ -1,0 +1,41 @@
+<div ng-include="'tpl/include/header.html'"></div>
+<div class="container">
+   <div ng-hide="succMsg || errorMsg">
+       <div class="form-group">
+           <lable>联系人</lable>
+           <input type="text" class="form-control" ng-model="user.name"/>
+       </div>
+
+       <div class="form-group">
+           <div class="radio-inline">
+               <lable>
+                   <input type="radio"name="sex"id="1"value="1"ng-model="user.sex"/>男
+               </lable>
+           </div>
+           <div class="radio-inline">
+               <lable>
+                   <input type="radio"name="sex"id="2"value="2"ng-model="user.sex"/>女
+               </lable>
+           </div>
+       </div>
+
+       <div class="form-group">
+           <lable>联系电话</lable>
+           <input type="text" class="form-control" ng-model="user.phone"/>
+       </div>
+
+       <div class="form-group">
+           <lable>联系地址</lable>
+           <textarea class="form-control" type="text" ng-model="user.address"></textarea>
+       </div>
+
+       <button class="btn btn-success btn-block" ng-click="submitOrder()">我要下单</button>
+   </div>
+    <div ng-show="succMsg">
+        <p>订单提交成功！你的订单编号为：{{orderId}},你可以去订单中心查看订单状态</p>
+    </div>
+    <div ng-show="errorMsg">
+        <p>订单提交失败！错误原因为{{errorMsg}}</p>
+    </div>
+</div>
+<div ng-include="'tpl/include/footer.html'"></div>

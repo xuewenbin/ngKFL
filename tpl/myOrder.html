@@ -1,0 +1,20 @@
+<div>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>订单编号</th>
+                <th>菜品</th>
+                <th>下单时间</th>
+                <th>联系人</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="dish in dishList">
+                <td ng-bind="dish.oid"></td>
+                <td><img ng-src="img/{{dish.img_sm}}" alt=""/></td>
+                <td ng-bind="dish.order_time |date:'yyyy-MM-dd HH:mm'"></td>
+                <td ng-bind="dish.user_name"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
